@@ -7,7 +7,9 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract USDK is ERC20, Ownable(msg.sender) {
-    constructor() ERC20("Kredete USD", "USDK") {
+    constructor(address _feeAddress, uint256 _feePercentage) ERC20("Kredete USD", "USDK") {
         _mint(msg.sender, 1_000_000_000 * (10 ** uint256(decimals())));
     }
+
+    function transfer(address recipient, uint256 amount) public override returns (bool) {}
 }
