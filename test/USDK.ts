@@ -15,10 +15,6 @@ describe("USDK Token", function () {
     [owner, addr1, addr2, feeAddress] = await ethers.getSigners();
     const USDK = await ethers.getContractFactory("USDK");
     usdk = await USDK.deploy(feeAddress.address, feePercentage);
-    // await usdk.deployed();
-
-    // // Mint initial supply to the owner (deployer)
-    // await usdk.mint(owner.address, initialSupply);
   });
 
   it("Should deploy the contract and set initial values", async function () {
